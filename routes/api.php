@@ -18,6 +18,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-
+Route::get('places', 'LocationController@getLocations');
 Route::post('places', 'LocationController@createLocation');
 
