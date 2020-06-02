@@ -11,7 +11,7 @@ class LocationController extends Controller
 
 
     public function getLocations(Request $request) {
-    	return Places::all();
+    	return Place::all();
     }
 
     public function createLocation(Request $request) {
