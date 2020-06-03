@@ -27,12 +27,12 @@ class PlaceCheckInController extends Controller
         # code...
         $place_temp->contaminated = 'S';
         $place = Place::findOrFail($place_temp->id);
-        $place->update($place_temp);
+        $place->save($place_temp);
       }
       else {
         $place_temp->contaminated = 'N';
         $place = Place::findOrFail($place_temp->id);
-        $place->update($place_temp);
+        $place->save($place_temp);
       }
       return Place_checkin::create($request->all());
     }
