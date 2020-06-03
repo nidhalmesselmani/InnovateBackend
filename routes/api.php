@@ -24,3 +24,7 @@ Route::post('places', 'LocationController@createLocation');
 
 Route::get('users', 'UserController@getUsers');
 Route::post('users', 'UserController@CreateUser');
+
+Route::get('checkins', 'PlaceCheckInController@getCheckInsByUserId');
+Route::post('checkins', 'PlaceCheckInController@createCheckIn');
+
