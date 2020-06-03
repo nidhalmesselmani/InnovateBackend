@@ -11,17 +11,6 @@ class PlaceCheckInController extends Controller
     //
 
     public function createCheckIn(Request $request) {
-      // logic to create a student record goes here
-      // return $request->all();
-     /* $place_temp = Place::where('id','=', $request->input('place_id'))->get()->first();
-      $place_temp->number_of_visits = $place_temp->number_of_visits + 1;
-
-      if($place_temp->number_of_visits > 2){
-
-
-        //$place = Place::findOrFail($place_temp->id);
-        $place->save();
-*/
 
       $place = Place::find($request->input('place_id'));
 
