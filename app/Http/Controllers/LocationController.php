@@ -45,5 +45,6 @@ class LocationController extends Controller
         $place->contaminated = 'N';
         $place->save();
       }
+      return 'report has been submited, thank you';
    }
 }
