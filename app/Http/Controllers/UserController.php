@@ -19,6 +19,6 @@ class UserController extends Controller
 
     public function getUserByCin(Request $request) {
 
-       return	User::where('cin','=', $request->input('cin'))->get();
+       return	User::where('cin','=', $request->input('cin'))->get()->first();
     }
 }
