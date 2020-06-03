@@ -17,6 +17,6 @@ class PlaceCheckInController extends Controller
 
     public function getCheckInsByUserId(Request $request) {
     	// PropertyUser::where('user_id', '=', Auth::user()->id)->get();
-      return	Place_checkin::where('user_id', '=', $request->id)->get();
+      return	Place_checkin::where('user_id', '=', $request->input('user_id'))->get();
     }
 }
