@@ -28,7 +28,7 @@ class PlaceCheckInController extends Controller
       $place->number_of_visits = $place->number_of_visits + 1;
 
       if($place->number_of_visits > 2){
-               $place_temp->contaminated = 'Y';
+               $place->contaminated = 'Y';
                $place->save();
       }
       elseif ($place->number_of_visits <= 2 and $place->number_of_visits > 0) {
