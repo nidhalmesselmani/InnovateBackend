@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Citie
+use App\Citie;
 
 use Illuminate\Http\Request;
 
