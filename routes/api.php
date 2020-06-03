@@ -36,3 +36,6 @@ Route::get('governorates','GovernorateController@getGovernorates');
 Route::get('city_by_governorate_id','CityController@getCitiesByGovernorateID');
 Route::get('place_by_city_id','LocationController@getPlacesByCityID');
 
+
+Route::post('report_place', 'LocationController@reportPlace');
+
