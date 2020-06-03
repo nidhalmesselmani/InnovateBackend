@@ -20,7 +20,7 @@ class PlaceCheckInController extends Controller
 
         $place_temp->contaminated = 'Y';
         $place = Place::findOrFail($place_temp->id);
-        $place->update($place_temp);
+        $place->save();
 
       }
       elseif ($place_temp->number_of_visits <= 2 and $place_temp->number_of_visits > 0) {
