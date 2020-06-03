@@ -19,4 +19,10 @@ class LocationController extends Controller
 
       return Place::create($request->all());
     }
+
+ 
+     public function getPlacesByCityID(Request $request){
+      	return	Citie::where('city_id', '=', $request->input('city_id'))->get();
+      }
+   
 }
