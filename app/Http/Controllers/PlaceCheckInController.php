@@ -11,8 +11,8 @@ class PlaceCheckInController extends Controller
 
     public function createCheckIn(Request $request) {
       // logic to create a student record goes here
-      echo $request->all();
-      return Place_checkin::create($request->all());
+      return $request->all();
+      // return Place_checkin::create($request->all());
     }
 
     public function getCheckInsByUserId(Request $request) {
