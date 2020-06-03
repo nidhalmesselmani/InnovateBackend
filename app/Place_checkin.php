@@ -8,7 +8,7 @@ class Place_checkin extends Model
 {
     //
     protected $fillable = [
-        'user_id', 'place_id','checkInTime','checkOutTime'
+        'user_id', 'place_id','checkin','checkout'
     ];    
     public $timestamps = false;
 }
