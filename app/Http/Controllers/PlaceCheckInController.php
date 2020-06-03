@@ -26,14 +26,14 @@ class PlaceCheckInController extends Controller
       $place = Place::find($request->input('place_id'));
 
       $place->number_of_visits = $place->number_of_visits + 1;
-      
+
       if($place->number_of_visits > 2){
                $place_temp->contaminated = 'Y';
                $place->save();
       }
       elseif ($place->number_of_visits <= 2 and $place->number_of_visits > 0) {
 
-        $place_temp->contaminated = 'S';
+        $place->contaminated = 'S';
         $place->save();
       }
       else {
