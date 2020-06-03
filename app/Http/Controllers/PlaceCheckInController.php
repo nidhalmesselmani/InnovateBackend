@@ -13,26 +13,32 @@ class PlaceCheckInController extends Controller
     public function createCheckIn(Request $request) {
       // logic to create a student record goes here
       // return $request->all();
-      $place_temp = Place::where('id','=', $request->input('place_id'))->get()->first();
+     /* $place_temp = Place::where('id','=', $request->input('place_id'))->get()->first();
       $place_temp->number_of_visits = $place_temp->number_of_visits + 1;
 
       if($place_temp->number_of_visits > 2){
 
-        $place_temp->contaminated = 'Y';
-        $place = Place::findOrFail($place_temp->id);
-        $place->save();
 
+        //$place = Place::findOrFail($place_temp->id);
+        $place->save();
+*/
+
+      $place = Place::find($request->input('place_id'));
+
+      $place->number_of_visits = $place->number_of_visits + 1;
+      
+      if($place->number_of_visits > 2){
+               $place_temp->contaminated = 'Y';
+               $place->save();
       }
-      elseif ($place_temp->number_of_visits <= 2 and $place_temp->number_of_visits > 0) {
-        # code...
+      elseif ($place->number_of_visits <= 2 and $place->number_of_visits > 0) {
+
         $place_temp->contaminated = 'S';
-        $place = Place::findOrFail($place_temp->id);
-        $place->save($place_temp);
+        $place->save();
       }
       else {
-        $place_temp->contaminated = 'N';
-        $place = Place::findOrFail($place_temp->id);
-        $place->save($place_temp);
+        $place->contaminated = 'N';
+        $place->save();
       }
       return Place_checkin::create($request->all());
     }
