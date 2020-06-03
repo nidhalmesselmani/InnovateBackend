@@ -1,7 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Place;
+use App\Citie;
 
 use Illuminate\Http\Request;
 
