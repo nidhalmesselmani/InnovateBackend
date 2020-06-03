@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Place;
-use App\Citie;
+
 
 use Illuminate\Http\Request;
 
@@ -24,7 +24,7 @@ class LocationController extends Controller
 
  
      public function getPlacesByCityID(Request $request){
-      	return	Citie::where('id', '=', $request->input('city_id'))->get();
+      	return	Place::where('city_id', '=', $request->input('city_id'))->get();
       }
    
 }
