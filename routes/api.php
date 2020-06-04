@@ -28,7 +28,7 @@ Route::post('users', 'UserController@CreateUser');
 Route::get('user_by_cin','UserController@getUserByCin');
 
 Route::get('checkins', 'PlaceCheckInController@getCheckInsByUserId');
-Route::post('checkins', 'PlaceCheckInController@createCheckIn');
+Route::get('checkinsadd', 'PlaceCheckInController@createCheckIn');
 
 Route::post('governorates', 'GovernorateController@createGovernorate');
 Route::post('cities', 'CityController@createCity');
