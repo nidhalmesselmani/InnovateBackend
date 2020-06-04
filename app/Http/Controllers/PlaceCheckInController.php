@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Place_checkin;
 use App\Place;
+use App\User;
 use Illuminate\Http\Request;
 
 
@@ -13,7 +14,10 @@ class PlaceCheckInController extends Controller
     public function createCheckIn(Request $request) {
 
       $place = Place::find($request->input('place_id'));
-
+      $user = User::find($request->input('user_id'));
+      
+       if($user->status == 'O')
+      {
       $place->number_of_visits = $place->number_of_visits + 1;
 
       if($place->number_of_visits > 2){
@@ -30,6 +34,7 @@ class PlaceCheckInController extends Controller
         $place->save();
       }
       return Place_checkin::create($request->all());
+    }
     }
 
     public function getCheckInsByUserId(Request $request) {
