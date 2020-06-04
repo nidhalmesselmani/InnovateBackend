@@ -16,6 +16,10 @@ class LocationController extends Controller
     	return Place::all();
     }
 
+    public function getLocation(Request $request) {
+    	return Place::where('id', '=', $request->input('place_id'))->get()->first();
+    }
+
     public function createLocation(Request $request) {
       // logic to create a student record goes here
 
