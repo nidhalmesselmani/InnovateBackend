@@ -40,3 +40,4 @@ Route::get('place_by_city_id','LocationController@getPlacesByCityID');
 
 Route::get('report_place', 'LocationController@reportPlace');
 
+Route::get('get_city_by_id', 'CityController@getCityById');
